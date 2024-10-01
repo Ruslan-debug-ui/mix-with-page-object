@@ -64,7 +64,6 @@ public class API {
                 .post("https://reqres.in/api/login")
                 .then()
                 .log().status()
-                .log().body()
                 .statusCode(200)
                 .extract().response();
 
@@ -76,6 +75,8 @@ public class API {
 
         JsonObject jsonObject = JsonParser.parseString(readableTest)
                 .getAsJsonObject();
+
+        
 
         assertTrue(jsonObject.isJsonObject());
         System.out.println(jsonObject);

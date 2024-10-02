@@ -2,7 +2,10 @@ package guru.qa.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormPage {
@@ -20,6 +23,7 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage openPage() {
         open("/text-box");
+        pageTextCenter.shouldBe(visible, Duration.ofSeconds(5));
         pageTextCenter.shouldHave(text("Text Box"));
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");

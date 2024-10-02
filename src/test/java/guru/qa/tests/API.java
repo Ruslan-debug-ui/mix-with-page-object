@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -65,6 +66,7 @@ public class API {
                 .then()
                 .log().status()
                 .statusCode(200)
+                .body(matchesJsonSchemaInClasspath("schema.json"))
                 .extract().response();
 
         String readableTest = response.asPrettyString();
@@ -76,7 +78,7 @@ public class API {
         JsonObject jsonObject = JsonParser.parseString(readableTest)
                 .getAsJsonObject();
 
-        
+
 
         assertTrue(jsonObject.isJsonObject());
         System.out.println(jsonObject);

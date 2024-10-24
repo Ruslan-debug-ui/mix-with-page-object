@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PolyElementForm {
@@ -21,24 +23,25 @@ public class PolyElementForm {
 
         $("input#firstName").setValue("Ruslan");
         $("#lastName").setValue("Ibraev");
-//        $("#userEmail").setValue("sobaka@sobaka.ru");
-//        $(byText("Female")).click();
-//        $("#userNumber").setValue("79999999999");
-//        $("#dateOfBirthInput").click();
-//        $(".react-datepicker__month-select").selectOptionByValue(String.valueOf(0));
-//        $(".react-datepicker__year-select").selectOptionByValue(String.valueOf(2001));
-//        $(byText("1")).click();
-//        $("#subjectsInput").setValue("Math").pressEnter();
-//        $(byText("Music")).click();
-//        $("#uploadPicture").uploadFromClasspath("test pic.jpg");
-//        $("#currentAddress").setValue("New address");
-//        $("#state").click();
-//        $(byText("NCR")).click();
-//        $("#city").click();
-//        $(byText("Delhi")).click();
-//        $("#submit").click();
+        $("#userEmail").setValue("sobaka@sobaka.ru");
+        $(byText("Male")).click();
+        $("#userNumber").setValue("799999999999");
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOptionByValue(String.valueOf(0));
+        $(".react-datepicker__year-select").selectOptionByValue(String.valueOf(2001));
+        $(byText("1")).click();
+        $("#subjectsInput").setValue("Math").pressEnter();
+        $(byText("Music")).click();
+        $("#uploadPicture").uploadFromClasspath("schema.json");
+        $("#currentAddress").setValue("New address");
+        $("#state").scrollIntoView(true);
+        $("#state").click();
+        $(byText("NCR")).click();
+        $("#city").click();
+        $(byText("Delhi")).click();
+        $("#submit").click();
 //
-//        $$("tr").get(1).shouldHave(text("Ivanna Ivanova"));
+        $$("tr").get(1).shouldHave(text("Ruslan Ibraev"));
 //        $$("tr").get(2).shouldHave(text("sobaka@sobaka.ru"));
 //        $$("tr").get(3).shouldHave(text("Female"));
 //        $$("tr").get(4).shouldHave(text("7999999999"));

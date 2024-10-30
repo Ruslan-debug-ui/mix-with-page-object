@@ -27,7 +27,7 @@ public class TextBoxTests {
         String name = "woo";
         open("/text-box");
         sleep(1000);
-        $("#userName").setValue("woo");
+        $("#userName").val("woo");
         sleep(1000);
         $("#userEmail").setValue("woo@woo.ru");
         sleep(1000);

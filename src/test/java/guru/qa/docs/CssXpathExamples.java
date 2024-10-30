@@ -14,7 +14,7 @@ public class CssXpathExamples {
 
         // <input type="email" class="inputtext login_form_input_box" name="email" id="email">
         $("[id=email]").setValue("123");
-        $("#email").setValue("123");
+        $("#email").setValue("123"); //- name!
         $(byId("email")).setValue("123");
         $(By.id("email")).setValue("123");
         $x("//*[@id='email']").setValue("123");
